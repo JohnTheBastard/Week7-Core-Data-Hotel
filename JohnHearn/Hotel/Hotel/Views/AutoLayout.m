@@ -106,5 +106,17 @@
                                      andMultiplier:multiplier];
 }
 
++(NSLayoutConstraint *)createGenericHeightConstraintFor:(UIView *)view
+                                             withHeight:(CGFloat)height{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:view
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:nil
+                                                                  attribute:NSLayoutAttributeNotAnAttribute
+                                                                 multiplier:1.0
+                                                                   constant:height];
+    constraint.active = YES;
+    return constraint;
+}
 
 @end

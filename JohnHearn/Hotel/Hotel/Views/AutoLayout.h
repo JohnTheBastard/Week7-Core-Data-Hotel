@@ -38,6 +38,7 @@
                                             toView:(UIView *)otherView
                                     withMultiplier:(CGFloat)multiplier;
 
-
++(NSLayoutConstraint *)createGenericHeightConstraintFor:(UIView *)view
+                                             withHeight:(CGFloat)height;
 
 @end

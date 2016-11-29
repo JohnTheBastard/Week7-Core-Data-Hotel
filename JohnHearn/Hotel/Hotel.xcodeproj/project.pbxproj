@@ -13,6 +13,8 @@
 		F29DBE641DECA09F00EA2C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29DBE631DECA09F00EA2C56 /* Assets.xcassets */; };
 		F29DBE6A1DECA0C100EA2C56 /* Hotel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE681DECA0C100EA2C56 /* Hotel.xcdatamodeld */; };
 		F29DBE6D1DECA2F700EA2C56 /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE6C1DECA2F700EA2C56 /* AutoLayout.m */; };
+		F29DBE6F1DECD9CC00EA2C56 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = F29DBE6E1DECD9CC00EA2C56 /* hotels.json */; };
+		F29DBE721DECEEFB00EA2C56 /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		F29DBE691DECA0C100EA2C56 /* Hotel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hotel.xcdatamodel; sourceTree = "<group>"; };
 		F29DBE6B1DECA2F700EA2C56 /* AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoLayout.h; path = Views/AutoLayout.h; sourceTree = "<group>"; };
 		F29DBE6C1DECA2F700EA2C56 /* AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoLayout.m; path = Views/AutoLayout.m; sourceTree = "<group>"; };
+		F29DBE6E1DECD9CC00EA2C56 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
+		F29DBE701DECEEFB00EA2C56 /* HotelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotelsViewController.h; path = Controllers/HotelsViewController.h; sourceTree = "<group>"; };
+		F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotelsViewController.m; path = Controllers/HotelsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		F29DBE571DEC9CDF00EA2C56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F29DBE6E1DECD9CC00EA2C56 /* hotels.json */,
 				F29DBE681DECA0C100EA2C56 /* Hotel.xcdatamodeld */,
 			);
 			name = Models;
@@ -101,6 +107,8 @@
 			children = (
 				F29DBE601DECA06C00EA2C56 /* ViewController.h */,
 				F29DBE611DECA06C00EA2C56 /* ViewController.m */,
+				F29DBE701DECEEFB00EA2C56 /* HotelsViewController.h */,
+				F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29DBE6F1DECD9CC00EA2C56 /* hotels.json in Resources */,
 				F29DBE641DECA09F00EA2C56 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +187,7 @@
 				F29DBE5F1DECA05600EA2C56 /* main.m in Sources */,
 				F29DBE5E1DECA05600EA2C56 /* AppDelegate.m in Sources */,
 				F29DBE6A1DECA0C100EA2C56 /* Hotel.xcdatamodeld in Sources */,
+				F29DBE721DECEEFB00EA2C56 /* HotelsViewController.m in Sources */,
 				F29DBE621DECA06C00EA2C56 /* ViewController.m in Sources */,
 				F29DBE6D1DECA2F700EA2C56 /* AutoLayout.m in Sources */,
 			);
