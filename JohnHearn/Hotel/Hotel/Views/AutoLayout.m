@@ -8,6 +8,8 @@
 
 #import "AutoLayout.h"
 
+extern CGFloat const KHeaderHeight = 100.0;
+
 @implementation AutoLayout
 
 +(NSLayoutConstraint *)createGenericConstraintFrom:(UIView *)view

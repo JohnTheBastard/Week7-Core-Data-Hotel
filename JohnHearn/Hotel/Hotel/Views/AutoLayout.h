@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+extern CGFloat const KHeaderHeight;
+
 @interface AutoLayout : NSObject
 
 +(NSLayoutConstraint *)createGenericConstraintFrom:(UIView *)view

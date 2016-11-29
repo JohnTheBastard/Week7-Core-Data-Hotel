@@ -12,7 +12,7 @@
 #import "Hotel+CoreDataClass.h"
 #import "Room+CoreDataClass.h"
 
-@interface RoomsViewController ()<UITableViewDataSource>
+@interface RoomsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property(strong, nonatomic)NSArray *dataSource;
 @property(strong, nonatomic)UITableView * tableView;
 
@@ -24,8 +24,8 @@
     [super loadView];
     self.tableView = [[UITableView alloc] init];
     self.tableView.dataSource = self;
-    self.tableView.delegate = self;
     self.dataSource = self.hotel.rooms.allObjects;
+    self.tableView.delegate = self;
 
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.tableView];
@@ -57,5 +57,28 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.hotel.rooms.count;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // Do something
+    NSLog(@"Room Cell Selected");
+}
+
+// This is redundant code (see HotelsViewController), should live elsewhere
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIImage *roomImage = [UIImage imageNamed:@"room"];
+    UIImageView *headerImageView = [[UIImageView alloc] initWithImage:roomImage];
+
+    //    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(tableView.frame), KHeaderHeight)];
+    //    [headerView addSubview:headerImageView];
+    headerImageView.contentMode = UIViewContentModeScaleAspectFill;
+    headerImageView.clipsToBounds = YES;
+
+    return headerImageView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return KHeaderHeight;
+}
+
 
 @end

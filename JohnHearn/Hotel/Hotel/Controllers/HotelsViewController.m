@@ -14,7 +14,7 @@
 
 @interface HotelsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property(strong, nonatomic)NSArray *dataSource;
-@property(strong, nonatomic)UITableView * tableView;
+@property(strong, nonatomic)UITableView *tableView;
 
 @end
 
@@ -79,7 +79,24 @@
     RoomsViewController *roomsVC = [[RoomsViewController alloc] init];
     roomsVC.hotel = self.dataSource[indexPath.row];
     [self.navigationController pushViewController:roomsVC animated:YES];
-    NSLog(@"Room Cell Selected");
+    NSLog(@"Hotel Cell Selected");
+}
+
+// This is redundant code (see RoomssViewController), should live elsewhere
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIImage *hotelImage = [UIImage imageNamed:@"hotel"];
+    UIImageView *headerImageView = [[UIImageView alloc] initWithImage:hotelImage];
+
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(tableView.frame), KHeaderHeight)];
+//    [headerView addSubview:headerImageView];
+    headerImageView.contentMode = UIViewContentModeScaleAspectFill;
+    headerImageView.clipsToBounds = YES;
+
+    return headerImageView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return KHeaderHeight;
 }
 @end
 
