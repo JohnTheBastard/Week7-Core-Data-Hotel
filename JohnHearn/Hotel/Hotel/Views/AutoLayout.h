@@ -8,7 +8,9 @@
 
 @import UIKit;
 
-extern CGFloat const KHeaderHeight;
+static CGFloat const kHeaderHeight = 100.0;
+static CGFloat const kNavBarAndStatusBarHeight = 64.0;
+
 
 @interface AutoLayout : NSObject
 

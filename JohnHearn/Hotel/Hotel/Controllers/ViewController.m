@@ -10,6 +10,7 @@
 #import "HotelsViewController.h"
 #import "Hotel+CoreDataClass.h"
 #import "Autolayout.h"
+#import "DatePickerViewController.h"
 
 
 @interface ViewController ()
@@ -72,12 +73,10 @@
     [browseButton addTarget:self
                      action:@selector(browseButtonSelected:)
            forControlEvents:UIControlEventTouchUpInside];
-}
 
--(void)browseButtonSelected:(UIButton *)sender{
-    HotelsViewController *hotelsVC = [[HotelsViewController alloc] init];
-    [self.navigationController pushViewController:hotelsVC animated:YES];
-    NSLog(@"Browse Button Pressed");
+    [bookButton addTarget:self
+                   action:@selector(bookButtonSelected:)
+         forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(UIButton *)createButtonWithTitle:(NSString *)title
@@ -90,6 +89,19 @@
 
     [self.view addSubview:button];
     return button;
+}
+
+-(void)browseButtonSelected:(UIButton *)sender{
+    HotelsViewController *hotelsVC = [[HotelsViewController alloc] init];
+    [self.navigationController pushViewController:hotelsVC animated:YES];
+    NSLog(@"Browse Button Pressed");
+}
+
+
+-(void)bookButtonSelected:(UIButton *)sender{
+    DatePickerViewController *datePickerVC = [[DatePickerViewController alloc] init];
+    [self.navigationController pushViewController:datePickerVC animated:YES];
+    NSLog(@"Book Button Pressed");
 }
 
 - (void)viewDidLoad {

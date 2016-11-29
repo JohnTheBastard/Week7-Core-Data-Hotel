@@ -68,7 +68,7 @@
     UIImage *roomImage = [UIImage imageNamed:@"room"];
     UIImageView *headerImageView = [[UIImageView alloc] initWithImage:roomImage];
 
-    //    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(tableView.frame), KHeaderHeight)];
+    //    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(tableView.frame), kHeaderHeight)];
     //    [headerView addSubview:headerImageView];
     headerImageView.contentMode = UIViewContentModeScaleAspectFill;
     headerImageView.clipsToBounds = YES;
@@ -77,7 +77,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return KHeaderHeight;
+    return kHeaderHeight;
 }
 
 
