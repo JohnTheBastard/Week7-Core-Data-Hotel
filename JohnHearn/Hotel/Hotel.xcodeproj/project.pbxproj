@@ -15,6 +15,7 @@
 		F29DBE6D1DECA2F700EA2C56 /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE6C1DECA2F700EA2C56 /* AutoLayout.m */; };
 		F29DBE6F1DECD9CC00EA2C56 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = F29DBE6E1DECD9CC00EA2C56 /* hotels.json */; };
 		F29DBE721DECEEFB00EA2C56 /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */; };
+		F29DBE751DED09BF00EA2C56 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE741DED09BF00EA2C56 /* RoomsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		F29DBE6E1DECD9CC00EA2C56 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
 		F29DBE701DECEEFB00EA2C56 /* HotelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotelsViewController.h; path = Controllers/HotelsViewController.h; sourceTree = "<group>"; };
 		F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotelsViewController.m; path = Controllers/HotelsViewController.m; sourceTree = "<group>"; };
+		F29DBE731DED09BF00EA2C56 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsViewController.h; path = Controllers/RoomsViewController.h; sourceTree = "<group>"; };
+		F29DBE741DED09BF00EA2C56 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsViewController.m; path = Controllers/RoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				F29DBE611DECA06C00EA2C56 /* ViewController.m */,
 				F29DBE701DECEEFB00EA2C56 /* HotelsViewController.h */,
 				F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */,
+				F29DBE731DED09BF00EA2C56 /* RoomsViewController.h */,
+				F29DBE741DED09BF00EA2C56 /* RoomsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				F29DBE5E1DECA05600EA2C56 /* AppDelegate.m in Sources */,
 				F29DBE6A1DECA0C100EA2C56 /* Hotel.xcdatamodeld in Sources */,
 				F29DBE721DECEEFB00EA2C56 /* HotelsViewController.m in Sources */,
+				F29DBE751DED09BF00EA2C56 /* RoomsViewController.m in Sources */,
 				F29DBE621DECA06C00EA2C56 /* ViewController.m in Sources */,
 				F29DBE6D1DECA2F700EA2C56 /* AutoLayout.m in Sources */,
 			);
