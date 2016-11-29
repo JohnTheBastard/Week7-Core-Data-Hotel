@@ -49,7 +49,7 @@
     }
 
     Room *room = self.dataSource[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"Room %hd ($%.2F per night)",room.number,room.rate];
+    cell.textLabel.text = [NSString stringWithFormat:@"Room %i ($%.02F per night, %i beds)",room.number,room.rate.floatValue, room.beds];
 
     return cell;
 }
