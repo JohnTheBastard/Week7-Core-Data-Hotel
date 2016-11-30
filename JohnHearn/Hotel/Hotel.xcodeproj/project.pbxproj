@@ -117,18 +117,18 @@
 		F29DBE591DEC9CEF00EA2C56 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F29DBE601DECA06C00EA2C56 /* ViewController.h */,
-				F29DBE611DECA06C00EA2C56 /* ViewController.m */,
-				F29DBE701DECEEFB00EA2C56 /* HotelsViewController.h */,
-				F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */,
-				F29DBE731DED09BF00EA2C56 /* RoomsViewController.h */,
-				F29DBE741DED09BF00EA2C56 /* RoomsViewController.m */,
-				F2BFE58A1DEDF73000E5E109 /* DatePickerViewController.h */,
-				F2BFE58B1DEDF73000E5E109 /* DatePickerViewController.m */,
 				F2BFE58E1DEE114700E5E109 /* AvailabilityViewController.h */,
 				F2BFE58F1DEE114700E5E109 /* AvailabilityViewController.m */,
 				F2BFE5911DEE1D4300E5E109 /* BookViewController.h */,
 				F2BFE5921DEE1D4300E5E109 /* BookViewController.m */,
+				F2BFE58A1DEDF73000E5E109 /* DatePickerViewController.h */,
+				F2BFE58B1DEDF73000E5E109 /* DatePickerViewController.m */,
+				F29DBE701DECEEFB00EA2C56 /* HotelsViewController.h */,
+				F29DBE711DECEEFB00EA2C56 /* HotelsViewController.m */,
+				F29DBE731DED09BF00EA2C56 /* RoomsViewController.h */,
+				F29DBE741DED09BF00EA2C56 /* RoomsViewController.m */,
+				F29DBE601DECA06C00EA2C56 /* ViewController.h */,
+				F29DBE611DECA06C00EA2C56 /* ViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

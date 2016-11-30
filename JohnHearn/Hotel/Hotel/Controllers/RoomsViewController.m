@@ -63,7 +63,7 @@
     NSLog(@"Room Cell Selected");
 }
 
-// This is redundant code (see HotelsViewController), should live elsewhere
+// This is redundant code (see HotelsViewController), maybe should live elsewhere
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIImage *roomImage = [UIImage imageNamed:@"room"];
     UIImageView *headerImageView = [[UIImageView alloc] initWithImage:roomImage];
