@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2080E981DEF54880021D2C2 /* AutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2080E971DEF54880021D2C2 /* AutoLayoutTests.m */; };
 		F29DBE5E1DECA05600EA2C56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE5C1DECA05600EA2C56 /* AppDelegate.m */; };
 		F29DBE5F1DECA05600EA2C56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE5D1DECA05600EA2C56 /* main.m */; };
 		F29DBE621DECA06C00EA2C56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29DBE611DECA06C00EA2C56 /* ViewController.m */; };
@@ -21,7 +22,20 @@
 		F2BFE5931DEE1D4300E5E109 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BFE5921DEE1D4300E5E109 /* BookViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F2080E921DEF523F0021D2C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F29DBE321DEC9CC100EA2C56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F29DBE391DEC9CC100EA2C56;
+			remoteInfo = Hotel;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F2080E8D1DEF523F0021D2C2 /* HotelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2080E911DEF523F0021D2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2080E971DEF54880021D2C2 /* AutoLayoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutTests.m; sourceTree = "<group>"; };
 		F29DBE3A1DEC9CC200EA2C56 /* Hotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29DBE511DEC9CC200EA2C56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F29DBE5B1DECA05600EA2C56 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Supporting Files/AppDelegate.h"; sourceTree = "<group>"; };
@@ -47,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F2080E8A1DEF523F0021D2C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F29DBE371DEC9CC100EA2C56 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,10 +78,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2080E8E1DEF523F0021D2C2 /* HotelTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2080E971DEF54880021D2C2 /* AutoLayoutTests.m */,
+				F2080E911DEF523F0021D2C2 /* Info.plist */,
+			);
+			path = HotelTests;
+			sourceTree = "<group>";
+		};
 		F29DBE311DEC9CC100EA2C56 = {
 			isa = PBXGroup;
 			children = (
 				F29DBE3C1DEC9CC200EA2C56 /* Hotel */,
+				F2080E8E1DEF523F0021D2C2 /* HotelTests */,
 				F29DBE3B1DEC9CC200EA2C56 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F29DBE3A1DEC9CC200EA2C56 /* Hotel.app */,
+				F2080E8D1DEF523F0021D2C2 /* HotelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +168,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F2080E8C1DEF523F0021D2C2 /* HotelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2080E961DEF523F0021D2C2 /* Build configuration list for PBXNativeTarget "HotelTests" */;
+			buildPhases = (
+				F2080E891DEF523F0021D2C2 /* Sources */,
+				F2080E8A1DEF523F0021D2C2 /* Frameworks */,
+				F2080E8B1DEF523F0021D2C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2080E931DEF523F0021D2C2 /* PBXTargetDependency */,
+			);
+			name = HotelTests;
+			productName = HotelTests;
+			productReference = F2080E8D1DEF523F0021D2C2 /* HotelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F29DBE391DEC9CC100EA2C56 /* Hotel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F29DBE541DEC9CC200EA2C56 /* Build configuration list for PBXNativeTarget "Hotel" */;
@@ -162,6 +212,12 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Bastardized Productions";
 				TargetAttributes = {
+					F2080E8C1DEF523F0021D2C2 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = KUNVAN4RR6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F29DBE391DEC9CC100EA2C56;
+					};
 					F29DBE391DEC9CC100EA2C56 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = KUNVAN4RR6;
@@ -183,11 +239,19 @@
 			projectRoot = "";
 			targets = (
 				F29DBE391DEC9CC100EA2C56 /* Hotel */,
+				F2080E8C1DEF523F0021D2C2 /* HotelTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F2080E8B1DEF523F0021D2C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F29DBE381DEC9CC100EA2C56 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,6 +264,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F2080E891DEF523F0021D2C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2080E981DEF54880021D2C2 /* AutoLayoutTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F29DBE361DEC9CC100EA2C56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,7 +291,41 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F2080E931DEF523F0021D2C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F29DBE391DEC9CC100EA2C56 /* Hotel */;
+			targetProxy = F2080E921DEF523F0021D2C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F2080E941DEF523F0021D2C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KUNVAN4RR6;
+				INFOPLIST_FILE = HotelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bastardized.jhearn.HotelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hotel.app/Hotel";
+			};
+			name = Debug;
+		};
+		F2080E951DEF523F0021D2C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KUNVAN4RR6;
+				INFOPLIST_FILE = HotelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bastardized.jhearn.HotelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hotel.app/Hotel";
+			};
+			name = Release;
+		};
 		F29DBE521DEC9CC200EA2C56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -337,6 +443,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F2080E961DEF523F0021D2C2 /* Build configuration list for PBXNativeTarget "HotelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2080E941DEF523F0021D2C2 /* Debug */,
+				F2080E951DEF523F0021D2C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F29DBE351DEC9CC100EA2C56 /* Build configuration list for PBXProject "Hotel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
