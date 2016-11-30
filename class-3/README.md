@@ -1,11 +1,12 @@
 #Week 8 - Class 3
 ##Homework
-* Create a ReservationService class that should abstract away your business logic (booking reservations, checking availability, etc)
-* Add UnitTests to your project. Write a couple of tests for your model.
-* Implement search by guest name - Lookup view controller.
-* Implement NSFetchedResultsController in (at least) one of your view controllers.
+* Write 10 Tests for the AutoLayout class.
+* Implement NSFetchedResultsController in AvailabilityViewController.
+* Implement LookupViewController.
+	* Implement a UISearchBar to fetch reservations based on the predicateFormat:`@"guest.email == %@", searchText`.(searchText represents the text entered in the UISearchBar)
+	* Implement a TableView to display the array of reservations returned from the fetch of reservations.
 * **Bonus:**
-	* Separate your core data setup into a separate CoreDataStack Class.
+	* Create a ReservationService, similar to our AutoLayout class, that should abstract away your business logic (booking reservations, checking availability, etc)
 
 ###Reading Assignment:
 * Apple Documentation + Other
