@@ -57,10 +57,15 @@
     [AutoLayout createGenericConstraintFrom:messageLabel
                                      toView:self.view
                               withAttribute:NSLayoutAttributeCenterY];
-    messageLabel.text = [NSString stringWithFormat:@"Reservation at:%@\nRoom:%i\nFrom: Today - %@",
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+
+    messageLabel.text = [NSString stringWithFormat:@"Reservation at:%@\nRoom:%i\nCheck-In Date: %@\nCheck-Out Date: %@",
                                                    self.room.hotel.name,
                                                    self.room.number,
-                                                   self.endDate];
+                                                   [dateFormatter stringFromDate:self.startDate],
+                                                   [dateFormatter stringFromDate:self.endDate]];
 }
 
 -(void)setupNameTextField{
@@ -96,13 +101,13 @@
 
     Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation"
                                                              inManagedObjectContext:context];
-    reservation.startDate = [NSDate date];
+    reservation.startDate = self.startDate;
     reservation.endDate = self.endDate;
     reservation.room = self.room;
     self.room.reservations = [self.room.reservations setByAddingObject:reservation];
     reservation.guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest"
                                                       inManagedObjectContext:context];
-    reservation.guest.name = self.nameField.text;
+    reservation.guest.firstName = self.nameField.text;
 
     NSError *saveError;
     [context save:&saveError];

@@ -11,6 +11,7 @@
 #import "AutoLayout.h"
 #import "BookViewController.h"
 #import "Room+CoreDataClass.h"
+#import "Hotel+CoreDataClass.h"
 #import "Reservation+CoreDataClass.h"
 
 @interface AvailabilityViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -92,7 +93,12 @@
     }
 
     Room *room = self.availableRooms[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"Room: %i (%i beds, $%.2f)",room.number,room.beds,room.rate.floatValue];
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@    room %i\n($%.2f/night, %i beds)",
+                                                     room.hotel.name,
+                                                     room.number,
+                                                     room.rate.floatValue,
+                                                     room.beds];
 
     return cell;
 }
@@ -107,7 +113,7 @@
 
     BookViewController *bookVC = [[BookViewController alloc] init];
     bookVC.room = room;
-    //TODO: also startDate
+    bookVC.startDate = self.startDate;
     bookVC.endDate = self.endDate;
 
     [self.navigationController pushViewController:bookVC animated:YES];
