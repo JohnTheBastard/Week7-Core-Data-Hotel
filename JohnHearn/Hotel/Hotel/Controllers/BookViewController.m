@@ -13,9 +13,11 @@
 #import "Reservation+CoreDataClass.h"
 #import "Guest+CoreDataClass.h"
 
+static CGFloat const margin = 20.0;
 
 @interface BookViewController ()
-@property(strong, nonatomic)UITextField *nameField;
+@property(strong, nonatomic)UITextField *firstNameField;
+@property(strong, nonatomic)UITextField *lastNameField;
 @property(strong, nonatomic)UITextField *emailField;
 
 @end
@@ -26,7 +28,7 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
 
     [self setupMessageLabel];
-    [self setupNameTextField];
+    [self setupTextFields];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
                                                                                 target:self
                                                                                 action:@selector(saveButtonSelected:)];
@@ -41,18 +43,18 @@
 -(void)setupMessageLabel{
     UILabel *messageLabel = [[UILabel alloc] init];
 
-    messageLabel.textAlignment = NSTextAlignmentCenter;
+    messageLabel.textAlignment = NSTextAlignmentLeft;
     messageLabel.numberOfLines = 0;
     [messageLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:messageLabel];
-    CGFloat myMargin = 20.0;
+
     NSLayoutConstraint *leading = [AutoLayout createLeadingConstraintFrom:messageLabel
                                                                    toView:self.view];
-    leading.constant = myMargin;
+    leading.constant = margin;
 
     NSLayoutConstraint *trailing = [AutoLayout createTrailingConstraintFrom:messageLabel
                                                                      toView:self.view];
-    trailing.constant = -myMargin;
+    trailing.constant = -margin;
 
     [AutoLayout createGenericConstraintFrom:messageLabel
                                      toView:self.view
@@ -61,35 +63,55 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = NSDateFormatterMediumStyle;
 
-    messageLabel.text = [NSString stringWithFormat:@"Reservation at:%@\nRoom:%i\nCheck-In Date: %@\nCheck-Out Date: %@",
+    messageLabel.text = [NSString stringWithFormat:@"Reservation at %@\nRoom: %i\nCheck-In Date: %@\nCheck-Out Date: %@",
                                                    self.room.hotel.name,
                                                    self.room.number,
                                                    [dateFormatter stringFromDate:self.startDate],
                                                    [dateFormatter stringFromDate:self.endDate]];
 }
 
--(void)setupNameTextField{
-    self.nameField = [[UITextField alloc] init];
-    self.nameField.placeholder = @"Please ender your name";
-    [self.nameField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addSubview:self.nameField];
+-(void)setupTextFields{
+    self.firstNameField = [[UITextField alloc] init];
+    self.lastNameField = [[UITextField alloc] init];
+    self.emailField = [[UITextField alloc] init];
 
-    //TODO: make global to VC
-    CGFloat myMargin = 20.0;
+    [self setupHelperFor:self.firstNameField
+             withMessage:@"Please enter your first name"];
+    [self setupHelperFor:self.lastNameField
+             withMessage:@"Please enter your last name"];
+    [self setupHelperFor:self.emailField
+             withMessage:@"Please enter your email address"];
 
-    NSLayoutConstraint *top = [AutoLayout createGenericConstraintFrom:self.nameField
-                                                               toView:self.view
-                                                        withAttribute:NSLayoutAttributeTop];
-    top.constant = kNavBarAndStatusBarHeight + myMargin;
-    NSLayoutConstraint *leading = [AutoLayout createLeadingConstraintFrom:self.nameField
+
+
+    NSDictionary *views = @{@"first":self.firstNameField,
+                            @"last":self.lastNameField,
+                            @"email":self.emailField};
+    NSDictionary *metrics = @{@"topPad":[NSNumber numberWithFloat:kNavBarAndStatusBarHeight + margin],
+                              @"margin":[NSNumber numberWithFloat:margin]};
+    NSString *format = @"V:|-topPad-[first]-[last]-[email]";
+
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                           options:0
+                                                                           metrics:metrics
+                                                                             views:views];
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+
+    [self.firstNameField becomeFirstResponder];
+}
+
+-(void)setupHelperFor:(UITextField *)field
+            withMessage:(NSString *)placeholder{
+    field.placeholder = placeholder;
+    [field setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:field];
+
+    NSLayoutConstraint *leading = [AutoLayout createLeadingConstraintFrom:field
                                                                    toView:self.view];
-    leading.constant = myMargin;
-    NSLayoutConstraint *trailing = [AutoLayout createTrailingConstraintFrom:self.nameField
+    leading.constant = margin;
+    NSLayoutConstraint *trailing = [AutoLayout createTrailingConstraintFrom:field
                                                                      toView:self.view];
-    trailing.constant = -myMargin;
-
-    [self.nameField becomeFirstResponder];
-
+    trailing.constant = -margin;
 }
 
 -(void)saveButtonSelected:(UIBarButtonItem *)sender{
@@ -107,7 +129,7 @@
     self.room.reservations = [self.room.reservations setByAddingObject:reservation];
     reservation.guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest"
                                                       inManagedObjectContext:context];
-    reservation.guest.firstName = self.nameField.text;
+    reservation.guest.firstName = self.firstNameField.text;
 
     NSError *saveError;
     [context save:&saveError];
