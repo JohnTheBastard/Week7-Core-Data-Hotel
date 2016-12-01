@@ -6,6 +6,7 @@
 //  Copyright © 2016 Bastardized Productions. All rights reserved.
 //
 
+#import <Flurry.h>
 #import "RoomsViewController.h"
 #import "AutoLayout.h"
 #import "AppDelegate.h"
@@ -38,6 +39,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"Rooms"];
+
+    [Flurry logEvent:@"User_Browsed_Hotel_Rooms"];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

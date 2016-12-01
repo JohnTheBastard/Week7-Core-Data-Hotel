@@ -6,6 +6,7 @@
 //  Copyright © 2016 Bastardized Productions. All rights reserved.
 //
 
+#import <Flurry.h>
 #import "BookViewController.h"
 #import "AutoLayout.h"
 #import "AppDelegate.h"
@@ -139,6 +140,9 @@
     } else {
         NSLog(@"Saved reservation successfully!");
         [self.navigationController popToRootViewControllerAnimated:YES];
+
+        NSDictionary *parameters = @{@"GuestName":reservation.guest.firstName};
+        [Flurry logEvent:@"Reservation_Booked" withParameters:parameters];
     }
 }
 

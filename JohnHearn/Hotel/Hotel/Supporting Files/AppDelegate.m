@@ -6,10 +6,12 @@
 //  Copyright © 2016 Bastardized Productions. All rights reserved.
 //
 
+#import <Flurry.h>
 #import "AppDelegate.h"
 #import "../Controllers/ViewController.h"
 #import "Hotel+CoreDataClass.h"
 #import "Room+CoreDataClass.h"
+
 
 @interface AppDelegate ()
 
@@ -22,6 +24,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //[Flurry setDebugLogEnabled:NO];
+    //TODO: Probably don't want to have this on github. Delete and move to ignored file.
+    [Flurry startSession:@"DVXB9C5PBQB54BM7H529"];
+    [Flurry logEvent:@"App_opened"];
+
     [self setupRootViewController];
     [self bootStrapApp];
 

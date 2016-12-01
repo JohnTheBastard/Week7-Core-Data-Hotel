@@ -5,7 +5,7 @@
 //  Created by John D Hearn on 11/30/16.
 //  Copyright © 2016 Bastardized Productions. All rights reserved.
 //
-
+#import <Flurry.h>
 #import "LookupViewController.h"
 #import "AutoLayout.h"
 #import "AppDelegate.h"
@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Flurry logEvent:@"Timed_user_search" timed:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -170,7 +171,10 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     if(self.searchBar.text){
         //[self foundReservations];
+        [Flurry logEvent:@"User_Searched_Reservations"];
+        [Flurry endTimedEvent:@"Timed_user_search"  withParameters:nil];
         [self.tableView reloadData];
+
     }
 
 }

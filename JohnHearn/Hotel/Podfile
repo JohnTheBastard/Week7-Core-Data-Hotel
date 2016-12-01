@@ -6,6 +6,8 @@ target 'Hotel' do
   # use_frameworks!
 
   # Pods for Hotel
+  pod 'Flurry-iOS-SDK/FlurrySDK'
+  pod 'Flurry-iOS-SDK/FlurryAds'
 
   target 'HotelTests' do
     inherit! :search_paths
