@@ -7,6 +7,7 @@
 //
 
 #import <Flurry.h>
+#import "Tokens.h"
 #import "AppDelegate.h"
 #import "../Controllers/ViewController.h"
 #import "Hotel+CoreDataClass.h"
@@ -26,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //[Flurry setDebugLogEnabled:NO];
     //TODO: Probably don't want to have this on github. Delete and move to ignored file.
-    [Flurry startSession:@"DVXB9C5PBQB54BM7H529"];
+    [Flurry startSession:kFlurryKey];
     [Flurry logEvent:@"App_opened"];
 
     [self setupRootViewController];

@@ -47,6 +47,7 @@
 		F2080E8D1DEF523F0021D2C2 /* HotelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2080E911DEF523F0021D2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2080E971DEF54880021D2C2 /* AutoLayoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutTests.m; sourceTree = "<group>"; };
+		F22690631DF0EB7D00741245 /* Tokens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Tokens.h; path = "Supporting Files/Tokens.h"; sourceTree = "<group>"; };
 		F2367F531DEF8DA2002A6082 /* LookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookupViewController.h; path = Controllers/LookupViewController.h; sourceTree = "<group>"; };
 		F2367F541DEF8DA2002A6082 /* LookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookupViewController.m; path = Controllers/LookupViewController.m; sourceTree = "<group>"; };
 		F2367F561DF0CA95002A6082 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -166,6 +167,7 @@
 				F29DBE5B1DECA05600EA2C56 /* AppDelegate.h */,
 				F29DBE5C1DECA05600EA2C56 /* AppDelegate.m */,
 				F29DBE5D1DECA05600EA2C56 /* main.m */,
+				F22690631DF0EB7D00741245 /* Tokens.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
