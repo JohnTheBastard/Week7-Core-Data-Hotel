@@ -13,8 +13,6 @@
 #import "Reservation+CoreDataClass.h"
 #import "Guest+CoreDataClass.h"
 
-static CGFloat const margin = 20.0;
-
 @interface BookViewController ()
 @property(strong, nonatomic)UITextField *firstNameField;
 @property(strong, nonatomic)UITextField *lastNameField;
@@ -50,11 +48,11 @@ static CGFloat const margin = 20.0;
 
     NSLayoutConstraint *leading = [AutoLayout createLeadingConstraintFrom:messageLabel
                                                                    toView:self.view];
-    leading.constant = margin;
+    leading.constant = kMargin;
 
     NSLayoutConstraint *trailing = [AutoLayout createTrailingConstraintFrom:messageLabel
                                                                      toView:self.view];
-    trailing.constant = -margin;
+    trailing.constant = -kMargin;
 
     [AutoLayout createGenericConstraintFrom:messageLabel
                                      toView:self.view
@@ -87,8 +85,8 @@ static CGFloat const margin = 20.0;
     NSDictionary *views = @{@"first":self.firstNameField,
                             @"last":self.lastNameField,
                             @"email":self.emailField};
-    NSDictionary *metrics = @{@"topPad":[NSNumber numberWithFloat:kNavBarAndStatusBarHeight + margin],
-                              @"margin":[NSNumber numberWithFloat:margin]};
+    NSDictionary *metrics = @{@"topPad":[NSNumber numberWithFloat:kNavBarAndStatusBarHeight + kMargin],
+                              @"margin":[NSNumber numberWithFloat:kMargin]};
     NSString *format = @"V:|-topPad-[first]-[last]-[email]";
 
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
@@ -108,10 +106,10 @@ static CGFloat const margin = 20.0;
 
     NSLayoutConstraint *leading = [AutoLayout createLeadingConstraintFrom:field
                                                                    toView:self.view];
-    leading.constant = margin;
+    leading.constant = kMargin;
     NSLayoutConstraint *trailing = [AutoLayout createTrailingConstraintFrom:field
                                                                      toView:self.view];
-    trailing.constant = -margin;
+    trailing.constant = -kMargin;
 }
 
 -(void)saveButtonSelected:(UIBarButtonItem *)sender{
@@ -130,6 +128,8 @@ static CGFloat const margin = 20.0;
     reservation.guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest"
                                                       inManagedObjectContext:context];
     reservation.guest.firstName = self.firstNameField.text;
+    reservation.guest.lastName = self.lastNameField.text;
+    reservation.guest.email = self.emailField.text;
 
     NSError *saveError;
     [context save:&saveError];

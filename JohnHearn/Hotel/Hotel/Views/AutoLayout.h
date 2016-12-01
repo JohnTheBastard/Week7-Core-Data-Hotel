@@ -10,6 +10,7 @@
 
 static CGFloat const kHeaderHeight = 100.0;
 static CGFloat const kNavBarAndStatusBarHeight = 64.0;
+static CGFloat const kMargin = 20.0;
 
 
 @interface AutoLayout : NSObject
@@ -45,4 +46,6 @@ static CGFloat const kNavBarAndStatusBarHeight = 64.0;
 +(NSLayoutConstraint *)createGenericHeightConstraintFor:(UIView *)view
                                              withHeight:(CGFloat)height;
 
++(NSLayoutConstraint *)createConstraintFromBottomOf:(UIView *)view
+                                            toTopOf:(UIView *)otherView;
 @end

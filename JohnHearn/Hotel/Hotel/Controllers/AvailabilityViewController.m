@@ -17,13 +17,10 @@
 @interface AvailabilityViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(strong, nonatomic)UITableView *tableView;
 @property(strong, nonatomic)NSFetchedResultsController *availableRooms;
-
-
 @end
 
+
 @implementation AvailabilityViewController
-
-
 -(NSFetchedResultsController *)availableRooms{
     if(!_availableRooms){
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

@@ -119,4 +119,21 @@
     return constraint;
 }
 
++(NSLayoutConstraint *)createConstraintFromBottomOf:(UIView *)view
+                                            toTopOf:(UIView *)otherView{
+
+    NSLayoutConstraint *constraint = [NSLayoutConstraint
+                                      constraintWithItem:view
+                                      attribute:NSLayoutAttributeTop
+                                      relatedBy:NSLayoutRelationEqual
+                                      toItem:otherView
+                                      attribute:NSLayoutAttributeBottom
+                                      multiplier:1
+                                      constant:0.0];
+
+    constraint.active = YES;
+
+    return constraint;
+
+}
 @end
