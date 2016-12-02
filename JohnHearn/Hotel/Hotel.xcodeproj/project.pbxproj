@@ -10,6 +10,7 @@
 		56B632E0EE5BCDE408071549 /* libPods-HotelTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB3E6CFE837167B84527A83 /* libPods-HotelTests.a */; };
 		E4A3AC5BF8E16BD9618C5D5D /* libPods-Hotel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D835D8CEA58C1CA07B0866 /* libPods-Hotel.a */; };
 		F2080E981DEF54880021D2C2 /* AutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2080E971DEF54880021D2C2 /* AutoLayoutTests.m */; };
+		F22690671DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = F22690661DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel */; };
 		F2367F551DEF8DA2002A6082 /* LookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2367F541DEF8DA2002A6082 /* LookupViewController.m */; };
 		F2367F571DF0CA95002A6082 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2367F561DF0CA95002A6082 /* SystemConfiguration.framework */; };
 		F2367F591DF0CAA9002A6082 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2367F581DF0CAA9002A6082 /* Security.framework */; };
@@ -48,6 +49,8 @@
 		F2080E911DEF523F0021D2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2080E971DEF54880021D2C2 /* AutoLayoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutTests.m; sourceTree = "<group>"; };
 		F22690631DF0EB7D00741245 /* Tokens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Tokens.h; path = "Supporting Files/Tokens.h"; sourceTree = "<group>"; };
+		F22690651DF1016600741245 /* Hotel1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hotel1.1.xcdatamodel; sourceTree = "<group>"; };
+		F22690661DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = "Hotel 1 to 1_1.xcmappingmodel"; path = "Models/Hotel 1 to 1_1.xcmappingmodel"; sourceTree = "<group>"; };
 		F2367F531DEF8DA2002A6082 /* LookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookupViewController.h; path = Controllers/LookupViewController.h; sourceTree = "<group>"; };
 		F2367F541DEF8DA2002A6082 /* LookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookupViewController.m; path = Controllers/LookupViewController.m; sourceTree = "<group>"; };
 		F2367F561DF0CA95002A6082 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,7 @@
 			children = (
 				F29DBE6E1DECD9CC00EA2C56 /* hotels.json */,
 				F29DBE681DECA0C100EA2C56 /* Hotel.xcdatamodeld */,
+				F22690661DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -444,6 +448,7 @@
 				F2BFE5901DEE114700E5E109 /* AvailabilityViewController.m in Sources */,
 				F2BFE5931DEE1D4300E5E109 /* BookViewController.m in Sources */,
 				F29DBE721DECEEFB00EA2C56 /* HotelsViewController.m in Sources */,
+				F22690671DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel in Sources */,
 				F29DBE751DED09BF00EA2C56 /* RoomsViewController.m in Sources */,
 				F29DBE621DECA06C00EA2C56 /* ViewController.m in Sources */,
 				F29DBE6D1DECA2F700EA2C56 /* AutoLayout.m in Sources */,
@@ -641,9 +646,10 @@
 		F29DBE681DECA0C100EA2C56 /* Hotel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F22690651DF1016600741245 /* Hotel1.1.xcdatamodel */,
 				F29DBE691DECA0C100EA2C56 /* Hotel.xcdatamodel */,
 			);
-			currentVersion = F29DBE691DECA0C100EA2C56 /* Hotel.xcdatamodel */;
+			currentVersion = F22690651DF1016600741245 /* Hotel1.1.xcdatamodel */;
 			name = Hotel.xcdatamodeld;
 			path = Models/Hotel.xcdatamodeld;
 			sourceTree = "<group>";
