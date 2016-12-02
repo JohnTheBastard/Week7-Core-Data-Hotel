@@ -11,6 +11,7 @@
 		E4A3AC5BF8E16BD9618C5D5D /* libPods-Hotel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D835D8CEA58C1CA07B0866 /* libPods-Hotel.a */; };
 		F2080E981DEF54880021D2C2 /* AutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2080E971DEF54880021D2C2 /* AutoLayoutTests.m */; };
 		F22690671DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = F22690661DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel */; };
+		F226906A1DF1039300741245 /* ReservationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F22690691DF1039300741245 /* ReservationTableViewCell.m */; };
 		F2367F551DEF8DA2002A6082 /* LookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2367F541DEF8DA2002A6082 /* LookupViewController.m */; };
 		F2367F571DF0CA95002A6082 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2367F561DF0CA95002A6082 /* SystemConfiguration.framework */; };
 		F2367F591DF0CAA9002A6082 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2367F581DF0CAA9002A6082 /* Security.framework */; };
@@ -51,6 +52,8 @@
 		F22690631DF0EB7D00741245 /* Tokens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Tokens.h; path = "Supporting Files/Tokens.h"; sourceTree = "<group>"; };
 		F22690651DF1016600741245 /* Hotel1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hotel1.1.xcdatamodel; sourceTree = "<group>"; };
 		F22690661DF1027C00741245 /* Hotel 1 to 1_1.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = "Hotel 1 to 1_1.xcmappingmodel"; path = "Models/Hotel 1 to 1_1.xcmappingmodel"; sourceTree = "<group>"; };
+		F22690681DF1039300741245 /* ReservationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReservationTableViewCell.h; path = Views/ReservationTableViewCell.h; sourceTree = "<group>"; };
+		F22690691DF1039300741245 /* ReservationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReservationTableViewCell.m; path = Views/ReservationTableViewCell.m; sourceTree = "<group>"; };
 		F2367F531DEF8DA2002A6082 /* LookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookupViewController.h; path = Controllers/LookupViewController.h; sourceTree = "<group>"; };
 		F2367F541DEF8DA2002A6082 /* LookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookupViewController.m; path = Controllers/LookupViewController.m; sourceTree = "<group>"; };
 		F2367F561DF0CA95002A6082 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -191,6 +194,8 @@
 				F29DBE6B1DECA2F700EA2C56 /* AutoLayout.h */,
 				F29DBE6C1DECA2F700EA2C56 /* AutoLayout.m */,
 				F29DBE631DECA09F00EA2C56 /* Assets.xcassets */,
+				F22690681DF1039300741245 /* ReservationTableViewCell.h */,
+				F22690691DF1039300741245 /* ReservationTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F226906A1DF1039300741245 /* ReservationTableViewCell.m in Sources */,
 				F2BFE58C1DEDF73000E5E109 /* DatePickerViewController.m in Sources */,
 				F29DBE5F1DECA05600EA2C56 /* main.m in Sources */,
 				F29DBE5E1DECA05600EA2C56 /* AppDelegate.m in Sources */,
