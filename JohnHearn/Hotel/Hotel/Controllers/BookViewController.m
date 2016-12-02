@@ -7,6 +7,8 @@
 //
 
 #import <Flurry.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import "BookViewController.h"
 #import "AutoLayout.h"
 #import "AppDelegate.h"
@@ -18,6 +20,7 @@
 @property(strong, nonatomic)UITextField *firstNameField;
 @property(strong, nonatomic)UITextField *lastNameField;
 @property(strong, nonatomic)UITextField *emailField;
+@property(strong, nonatomic)UIButton *crashButton;
 
 @end
 
@@ -26,8 +29,9 @@
     [super loadView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
 
+    [self setupCrashlytics];
     [self setupMessageLabel];
-    [self setupTextFields];
+    [self setupTextFieldsAndButton];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
                                                                                 target:self
                                                                                 action:@selector(saveButtonSelected:)];
@@ -37,6 +41,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+-(void)setupCrashlytics{
+    self.crashButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.crashButton.frame = CGRectMake(20, 50, 100, 30);
+    [self.crashButton setTitle:@"Crash" forState:UIControlStateNormal];
+    [self.crashButton addTarget:self action:@selector(crashButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.crashButton];
+    [self.crashButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    NSLayoutConstraint *leading = [AutoLayout createLeadingConstraintFrom:self.crashButton
+                                                                   toView:self.view];
+    leading.constant = kMargin;
+
+    NSLayoutConstraint *trailing = [AutoLayout createTrailingConstraintFrom:self.crashButton
+                                                                     toView:self.view];
+    trailing.constant = -kMargin;
 }
 
 -(void)setupMessageLabel{
@@ -69,7 +90,7 @@
                                                    [dateFormatter stringFromDate:self.endDate]];
 }
 
--(void)setupTextFields{
+-(void)setupTextFieldsAndButton{
     self.firstNameField = [[UITextField alloc] init];
     self.lastNameField = [[UITextField alloc] init];
     self.emailField = [[UITextField alloc] init];
@@ -85,10 +106,12 @@
 
     NSDictionary *views = @{@"first":self.firstNameField,
                             @"last":self.lastNameField,
-                            @"email":self.emailField};
+                            @"email":self.emailField,
+                            @"crash":self.crashButton};
+
     NSDictionary *metrics = @{@"topPad":[NSNumber numberWithFloat:kNavBarAndStatusBarHeight + kMargin],
                               @"margin":[NSNumber numberWithFloat:kMargin]};
-    NSString *format = @"V:|-topPad-[first]-[last]-[email]";
+    NSString *format = @"V:|-topPad-[first]-[last]-[email]-[crash]";
 
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
                                                                            options:0
@@ -111,6 +134,25 @@
     NSLayoutConstraint *trailing = [AutoLayout createTrailingConstraintFrom:field
                                                                      toView:self.view];
     trailing.constant = -kMargin;
+}
+
+- (IBAction)crashButtonTapped:(id)sender {
+    NSMutableString *identifier = [NSMutableString stringWithFormat:@""];
+
+    if(![self.lastNameField.text isEqualToString:@""]){
+        [identifier appendString:self.lastNameField.text];
+        [identifier appendString:@", "];
+    }
+    if(![self.firstNameField.text isEqualToString:@""]){
+    [identifier appendString:self.firstNameField.text];
+    }
+
+    [CrashlyticsKit setUserIdentifier:identifier];
+    [CrashlyticsKit setUserEmail:self.emailField.text];
+    //[CrashlyticsKit setUserName:@"Test User"];
+
+
+    [[Crashlytics sharedInstance] crash];
 }
 
 -(void)saveButtonSelected:(UIBarButtonItem *)sender{

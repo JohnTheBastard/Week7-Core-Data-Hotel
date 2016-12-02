@@ -7,6 +7,8 @@
 //
 
 #import <Flurry.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import "Tokens.h"
 #import "AppDelegate.h"
 #import "../Controllers/ViewController.h"
@@ -30,10 +32,21 @@
     [Flurry startSession:kFlurryKey];
     [Flurry logEvent:@"App_opened"];
 
+    [Fabric with:@[[Crashlytics class]]];
+    [self logUser];
+
     [self setupRootViewController];
     [self bootStrapApp];
 
     return YES;
+}
+
+- (void) logUser {
+    // TODO: Use the current user's information
+    // You can call any combination of these three methods
+    [CrashlyticsKit setUserIdentifier:@"12345"];
+    [CrashlyticsKit setUserEmail:@"user@fabric.io"];
+    [CrashlyticsKit setUserName:@"Test User"];
 }
 
 -(void)setupRootViewController{

@@ -8,6 +8,8 @@ target 'Hotel' do
   # Pods for Hotel
   pod 'Flurry-iOS-SDK/FlurrySDK'
   pod 'Flurry-iOS-SDK/FlurryAds'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'HotelTests' do
     inherit! :search_paths
