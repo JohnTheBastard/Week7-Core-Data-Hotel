@@ -1,5 +1,6 @@
 # Secret Credentials
 Credentials.swift
+Tokens.h
 
 
 # Created by https://www.gitignore.io/api/xcode,swift,objective-c,macos,emacs,node
